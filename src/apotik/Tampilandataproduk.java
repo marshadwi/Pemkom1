@@ -4,10 +4,12 @@
  */
 package apotik;
 
+import static apotik.TampilanUser.viewData;
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 /**
@@ -15,19 +17,19 @@ import javax.swing.table.DefaultTableModel;
  * @author LENOVO
  */
 public class Tampilandataproduk extends javax.swing.JFrame {
-    private UserProfile pr;
-    
-    /**
-     * Creates new form DataProduk
-     */
-    
+    UserProfile pr; // Menyimpan objek userprofile
+
+    // Konstruktor tanpa argumen
     public Tampilandataproduk() {
         initComponents();
-    
+        this.setExtendedState(JFrame.MAXIMIZED_BOTH);
+
     }
-    
+
+    // Konstruktor dengan argumen userprofile
     public Tampilandataproduk(UserProfile pr) {
         initComponents();
+        this.pr = pr; // Simpan objek userprofile
         viewdataproduk("");
     }
 

@@ -29,7 +29,7 @@ public class function {
         return sdf.format(d);
     }
 
-    // Memodifikasi savelog untuk menggunakan getDateNow
+    // Memodifikasi savelog untuk menggunakan getDateNow 
     public static void savelog(String activity) {
         try {
             File f = new File(pathFolder);

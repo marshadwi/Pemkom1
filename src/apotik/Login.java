@@ -258,8 +258,8 @@ public class Login extends javax.swing.JFrame {
     private javax.swing.JTextField txtUsername;
     // End of variables declaration//GEN-END:variables
   
-    private void login() {
-        String  user = txtUsername.getText();
+    public  void login() {
+        String user = txtUsername.getText();
         String pass = new String(txtPassword.getPassword());
         try {
             Connection c = Koneksi.Go();
@@ -288,9 +288,10 @@ public class Login extends javax.swing.JFrame {
                 up.setAlamat(alamat); // Set alamat
                 up.setTelepon(telepon); // Set telepon
                 up.setEmail(email); // Set email 
+                
                 status++;
             }
-
+            
             if (status > 0) {
                 // Login berhasil
                 function.savelog("Login berhasil - Username: " + user + " (Level: " + lv + ")");

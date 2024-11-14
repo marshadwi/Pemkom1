@@ -6,7 +6,7 @@ package apotik;
 
 /**
  *
- * @author LENOVO
+ * @author HP
  */
 public class UserProfile {
     private int id;
@@ -17,7 +17,7 @@ public class UserProfile {
     private String alamat;
     private String telepon;
     private String email;
-
+    
     public int getId() {
         return id;
     }
@@ -57,7 +57,6 @@ public class UserProfile {
     public void setLevel(String level) {
         this.level = level;
     }
-    
     
     public String getAlamat() {
         return alamat;

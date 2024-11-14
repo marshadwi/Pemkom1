@@ -17,17 +17,20 @@ import javax.swing.table.DefaultTableModel;
  * @author Lrenovo
  */
 public class TampilanUser extends javax.swing.JFrame {
-    
+    UserProfile pr; // Menyimpan objek userprofile
 
-    /**
-     * Creates new form User
-     */
+    // Konstruktor tanpa argumen
     public TampilanUser() {
         initComponents();
         this.setExtendedState(JFrame.MAXIMIZED_BOTH);
+
+    }
+
+    // Konstruktor dengan argumen userprofile
+    public TampilanUser(UserProfile pr) {
+        initComponents();
+        this.pr = pr; // Simpan objek userprofile
         viewData("");
-        
-  
     }
     
  
@@ -207,6 +210,11 @@ public class TampilanUser extends javax.swing.JFrame {
         );
 
         jButton5.setText("Kembali");
+        jButton5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton5ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -343,6 +351,14 @@ public class TampilanUser extends javax.swing.JFrame {
     private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
         // TODO add your handling code here:
     }//GEN-LAST:event_formWindowOpened
+
+    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
+        // TODO add your handling code here:
+        HalamanAdmin ha = new HalamanAdmin();
+        ha.updateUser(this.pr); // Pastikan Anda menyimpan objek userprofile di tampilan user
+        ha.setVisible(true);
+        this.dispose(); // Tutup tampilan saat ini
+    }//GEN-LAST:event_jButton5ActionPerformed
 
     /**
      * @param args the command line arguments
